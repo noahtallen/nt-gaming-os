@@ -41,7 +41,7 @@ modules:
   - type: fonts
     fonts:
      nerd-fonts:
-       - cascadia-code
+       - CascadiaCode
 
   # Install 1Password.
   - type: bling
