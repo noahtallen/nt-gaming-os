@@ -23,8 +23,10 @@ modules:
         - fish # Ultimately removes ncurses, which causes a terminfo conflict with ghostty
     repos:
       copr:
-        - scottames/zen-browser
+        - sneexy/zen-browser
         - pgdev/ghostty
+    optfix:
+        - zen
     install:
       packages:
         - zen-browser
@@ -36,7 +38,7 @@ modules:
       # If no repo information is specified, Flathub will be used by default
       install:
         - dev.zed.Zed
-        - dev.vencord.Vesktop
+        # - dev.vencord.Vesktop (does not support 2fa on linux)
 
   - type: fonts
     fonts:
