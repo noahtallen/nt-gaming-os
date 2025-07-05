@@ -21,9 +21,11 @@ modules:
     repos:
       copr:
         - scottames/zen-browser
+        - pgdev/ghostty
     install:
       packages:
         - zen-browser
+        - ghostty
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
