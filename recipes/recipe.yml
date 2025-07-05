@@ -25,12 +25,14 @@ modules:
       copr:
         - sneexy/zen-browser
         - pgdev/ghostty
+        - codifryed/CoolerControl
     optfix:
       - zen
     install:
       packages:
         - zen-browser
         - ghostty
+        - coolercontrol
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
@@ -50,5 +52,10 @@ modules:
   - type: bling
     install:
       - 1password
+
+  - type: systemd
+    system:
+      enabled:
+        - coolercontrold
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
