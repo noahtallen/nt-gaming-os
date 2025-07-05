@@ -18,6 +18,9 @@ modules:
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
     
   - type: dnf
+    remove:
+      packages:
+        - fish # Ultimately removes ncurses, which causes a terminfo conflict with ghostty
     repos:
       copr:
         - scottames/zen-browser
