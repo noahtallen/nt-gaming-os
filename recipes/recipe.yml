@@ -6,8 +6,8 @@ name: nt-gaming-os
 description: An OS with pre-installed gaming software just for me.
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image:  ghcr.io/ublue-os/bazzite-gnome-nvidia-open
-image-version: latest
+base-image: ghcr.io/ublue-os/bazzite-gnome-nvidia
+image-version: 42
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
@@ -16,7 +16,7 @@ modules:
     files:
       - source: system
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
-    
+
   - type: dnf
     remove:
       packages:
@@ -26,7 +26,7 @@ modules:
         - sneexy/zen-browser
         - pgdev/ghostty
     optfix:
-        - zen
+      - zen
     install:
       packages:
         - zen-browser
@@ -38,12 +38,13 @@ modules:
       # If no repo information is specified, Flathub will be used by default
       install:
         - dev.zed.Zed
+        - md.obsidian.Obsidian
         # - dev.vencord.Vesktop (does not support 2fa on linux)
 
   - type: fonts
     fonts:
-     nerd-fonts:
-       - CascadiaCode
+      nerd-fonts:
+        - CascadiaCode
 
   # Install 1Password.
   - type: bling
@@ -51,4 +52,3 @@ modules:
       - 1password
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
-
